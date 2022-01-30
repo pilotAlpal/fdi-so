@@ -1,6 +1,6 @@
-badsort.o: badsort.c
-
 badsort: badsort.o
+
+badsort.o: badsort.c
 
 .PHONY: clean
 clean:
