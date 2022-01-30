@@ -1,25 +1,25 @@
 #include <stdio.h>
 
 typedef struct Item {
-   char  data[50];
+   char  data[4096];
    int  key;
 } item;
 
 item array[] = {
-	{"p0k21", 21},
-	{"p1k22", 22},
-	{"p2k20", 20},
-	{"p3k3", 3},
-	{"p4k2", 2}
-};
+	{"bill", 3},
+	{"neil", 4},
+	{"john", 2},
+	{"rick", 5},
+	{"alex", 1},
+ };
 
 void sort(item *a, int n) {
 	int i = 0, j = 0;
 	int s = 1;
-	
-	for(; i < n & s != 0; i++) {
+
+	for(; (i < n) && (s != 0); i++) {
 		s = 0;
-		for(j = 0; j < n; j++) {
+		for(j = 0; j < n -1; j++) {
 			if(a[j].key > a[j+1].key) {
 				item t = a[j];
 				a[j] = a[j+1];
@@ -27,7 +27,6 @@ void sort(item *a, int n) {
 				s++;
 			}
 		}
-		n--;
 	}
 }
 
